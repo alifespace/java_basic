@@ -14,8 +14,30 @@ public class StudentTest {
 		for (Student Student1: studClass) {
 			System.out.println(Student1.getInfo());
 		}
-	}
 
+//		Print Grade 3 list
+		System.out.println("*****Grade 3 List******");
+		for (Student Student1: studClass) {
+			if (Student1.studentGrade == 3) {
+				System.out.println(Student1.getInfo());
+			}
+		}
+// Print Score List
+		System.out.println("***** Student's Score List*****");
+		for (int i = 0; i < studClass.length - 1; i++) {
+			for (int j = i + 1; j < studClass.length; j++) {
+				if (studClass[j].studentScore < studClass[i].studentScore) {
+					Student Temp = studClass[j];
+					studClass[j] = studClass[i];
+					studClass[i] = Temp;
+				}
+			}
+		}
+
+		for (Student Student1: studClass) {
+			System.out.println(Student1.getInfo());
+		}
+	}
 }
 
 class Student {
@@ -24,7 +46,7 @@ class Student {
 	int studentScore;
 
 	public Student(int i, int j, int k) {
-		studentNo = i;
+		studentNo = i + 1;
 		studentGrade = (int) (Math.random() * j + 1);
 		studentScore = (int) (Math.random() * k + 1);
 	}
