@@ -32,7 +32,7 @@ public class StudentTest {
 					studClass[i] = Temp;
 				}
 			}
-// Test23
+// Test2300
 		}
 
 		for (Student Student1: studClass) {
